@@ -17,3 +17,7 @@ This application providing curated access to public data sources across multiple
 **Author:**
 [Gameye98](https://github.com/Gameye98)
 
+## Screenshots
+<img src="assets/screenshot01.png">  
+<img src="assets/screenshot02.png">  
+<img src="assets/screenshot03.png">  
