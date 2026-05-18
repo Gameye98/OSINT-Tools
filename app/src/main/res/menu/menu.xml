@@ -1,0 +1,12 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+	<item
+		android:id="@+id/information"
+		android:title="Information"
+		android:icon="@drawable/ic_information"
+		android:showAsAction="always"/>
+
+</menu>
+
+

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+	xmlns:android="http://schemas.android.com/apk/res/android"
+	android:layout_width="fill_parent"
+	android:layout_height="fill_parent"
+	android:orientation="vertical">
+
+	<com.gameye98.osint.FontAwesomeSolid
+		android:id="@+id/wtpsave"
+		android:layout_width="match_parent"
+		android:layout_height="50dp"
+		android:padding="8dp"
+		android:text="@string/fa_solid_download"
+		android:textSize="16sp"
+		android:textColor="#FFFFFF"
+		android:textStyle="bold"
+		android:backgroundTint="#2F2F2F"/>
+
+	<com.gameye98.osint.FontAwesomeSolid
+		android:id="@+id/wtpdesktop"
+		android:layout_width="match_parent"
+		android:layout_height="50dp"
+		android:padding="8dp"
+		android:text="@string/fa_solid_desktop"
+		android:textSize="16sp"
+		android:textColor="#FFFFFF"
+		android:textStyle="bold"
+		android:backgroundTint="#2F2F2F"/>
+
+	<WebView
+		android:id="@+id/webview"
+		android:layout_width="fill_parent"
+		android:layout_height="fill_parent"
+		android:layout_alignParentLeft="true"
+		android:layout_alignParentTop="true"
+		android:layout_alignParentRight="true"
+		android:layout_alignParentBottom="true"
+		android:background="#FF2C2C2C"/>
+
+</LinearLayout>
+
