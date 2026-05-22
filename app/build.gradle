@@ -8,8 +8,8 @@ android {
         applicationId "com.gameye98.osint"
         minSdkVersion 19
         targetSdkVersion 23
-        versionCode 2
-        versionName "1.1"
+        versionCode 3
+        versionName "1.3"
     }
 
     buildTypes {
