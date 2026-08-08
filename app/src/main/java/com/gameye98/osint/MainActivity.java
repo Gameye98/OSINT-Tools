@@ -65,8 +65,8 @@ public class MainActivity extends Activity {
 			String search = query.toLowerCase();
 			String[] siteitem = sites.get(x).split(Pattern.quote("|"));
 			final String siteurl = siteitem[0];
-			String siteinfo =  siteitem[1];
-			String siteicon = siteitem[2];
+			final String siteinfo =  siteitem[1];
+			final String siteicon = siteitem[2];
 			if(!(siteinfo.toLowerCase().contains(search) || siteurl.toLowerCase().contains(search))) {
 				continue;
 			}
@@ -124,6 +124,25 @@ public class MainActivity extends Activity {
 						// Set up action buttons
 						LayoutInflater layoutInflater = LayoutInflater.from(MainActivity.this);
 						view = layoutInflater.inflate(R.layout.open, null, false);
+						ImageView openImage = view.findViewById(R.id.openImg);
+						// Check logo icon && set image drawable
+						if(!siteicon.equals("default")) {
+							try {
+								InputStream stream = getAssets().open("icons/"+siteicon);
+								Drawable drawable = Drawable.createFromStream(stream, null);
+								openImage.setImageDrawable(drawable);
+								stream.close();
+							} catch(Exception e) {
+								e.printStackTrace();
+							}
+						} else {
+							openImage.setImageResource(R.drawable.ic_search_web);
+						}
+						// Scale type
+						//openImage.setScaleType(ImageView.ScaleType.FIT_CENTER);
+						// Content description
+						TextView ooenTitle = view.findViewById(R.id.openTitle);
+						ooenTitle.setText(siteinfo);
 						Button openBrowser = view.findViewById(R.id.openBrowser);
 						Button openHere = view.findViewById(R.id.openHere);
 						openBrowser.setOnClickListener(new View.OnClickListener() {
@@ -168,6 +187,7 @@ public class MainActivity extends Activity {
 			//textParams.topMargin = (int)(4 * density);
 			text.setLayoutParams(textParams);
 			text.setText(siteinfo);
+			text.setMaxLines(3);
 			text.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
 			text.setTextColor(Color.parseColor("#FFFFFF"));
 			// Remove internal spacing

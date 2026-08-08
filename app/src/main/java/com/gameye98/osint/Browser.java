@@ -68,6 +68,11 @@ public class Browser extends Activity {
 		webView.reload();
 	}
 	@Override
+	public void onPause() {
+		super.onPause();
+		CookieManager.getInstance().flush();
+	}
+	@Override
 	public void onCreate(Bundle bundle) {
 		super.onCreate(bundle);
 		setContentView(R.layout.browser);
@@ -86,12 +91,20 @@ public class Browser extends Activity {
 		webview.getSettings().setCacheMode(2);
 		webview.getSettings().setRenderPriority(WebSettings.RenderPriority.HIGH);
 		webview.getSettings().setDomStorageEnabled(true);
+		webview.getSettings().setDatabaseEnabled(true);
 		webview.getSettings().setGeolocationEnabled(true);
+		webview.getSettings().setAllowFileAccess(true);
+		webview.getSettings().setAllowContentAccess(true);
+		webview.getSettings().setAllowFileAccessFromFileURLs(true);
+		webview.getSettings().setAllowUniversalAccessFromFileURLs(true);
 		webview.setLongClickable(true);
 		webview.setFocusableInTouchMode(true);
 		webview.setOnCreateContextMenuListener((View.OnCreateContextMenuListener)getParent());
 		webview.setKeepScreenOn(true);
 		webview.setSoundEffectsEnabled(true);
+		CookieManager cookieManager = CookieManager.getInstance();
+		cookieManager.setAcceptCookie(true);
+		cookieManager.setAcceptThirdPartyCookies(webview, true);
 		webview.loadUrl(url);
 		webview.setWebChromeClient(new WebChromeClient()
 			{

@@ -8,6 +8,44 @@
 	android:layout_gravity="center|fill"
 	android:background="#FF2C2C2C">
 
+	<LinearLayout
+		android:orientation="horizontal"
+		android:layout_width="match_parent"
+		android:layout_height="80dp">
+
+		<LinearLayout
+			android:orientation="vertical"
+			android:layout_width="0dp"
+			android:layout_weight="1"
+			android:layout_height="match_parent"
+			android:gravity="center"
+			android:padding="10dp">
+
+			<ImageView
+				android:id="@+id/openImg"
+				android:layout_width="match_parent"
+				android:layout_height="match_parent"
+				android:adjustViewBounds="true"
+				android:scaleType="fitCenter"
+				android:src="@drawable/default_icon"/>
+
+		</LinearLayout>
+
+		<TextView
+			android:layout_width="0dp"
+			android:layout_height="match_parent"
+			android:textAppearance="?android:attr/textAppearanceMedium"
+			android:layout_weight="4"
+			android:gravity="center"
+			android:textColor="#FFFFFFFF"
+			android:id="@+id/openTitle"
+			android:textStyle="bold"
+			android:typeface="monospace"
+			android:padding="10dp"
+			android:textSize="14sp"/>
+
+	</LinearLayout>
+
 	<Button
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
